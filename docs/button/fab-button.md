@@ -18,6 +18,11 @@ O foco desta versão é **estrutura, estilo e organização**, garantindo fácil
 
 ---
 
+## Definições de design Utilizadas
+Material design kit: [Material 3 Design Kit (Community)](https://www.figma.com/design/cmkf7Rolvec1ryF4Gs3ukE/Material-3-Design-Kit--Community-?node-id=57998-42882&t=LoGawel0WqiNhgWS-0)
+
+
+---
 ## Tecnologias Utilizadas
 
 ### Web Components
