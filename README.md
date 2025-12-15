@@ -1,4 +1,3 @@
-````md
 # Design System Cats — Guia Geral 🐱
 
 Este documento explica **toda a estrutura do projeto**, **como criar componentes**, **como utilizá-los**, **como visualizá-los no playground** e **como rodar o projeto localmente**.  
