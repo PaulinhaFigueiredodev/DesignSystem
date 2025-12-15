@@ -1,47 +1,32 @@
-# Fab Button – Documentação versão inicial
+
+# `<fab-button>` — Documentação (V1)
 
 ## Visão Geral
 
-A **primeira versão do `<fab-button>`** representa a versão mais básica e estável do componente Floating Action Button dentro do design system. Ela foi criada como um **baseline**, servindo de fundação para evoluções incrementais futuras, sem acoplamento de comportamentos ou animações.
+O `<fab-button>` é um **Floating Action Button básico**, implementado como **Web Component com Lit**.  
+Esta é a **versão inicial (V1)**, focada exclusivamente na **apresentação visual**, servindo como base para evoluções futuras do Design System Cats.
 
-O foco desta versão é **estrutura, estilo e organização**, garantindo fácil manutenção e evolução.
-
----
-
-## Objetivos da Primeira Versão
-
-* Criar um **FAB apenas visual**, sem lógica de negócio
-* Garantir **separação clara de responsabilidades** (CSS x JS)
-* Utilizar **Web Components com Lit**
-* Aplicar **design tokens via CSS variables**
-* Estabelecer uma base sólida para evoluções futuras
+O componente **não possui ações, eventos ou estados interativos** nesta versão.
 
 ---
 
-## Definições de design Utilizadas
-Material design kit: [Material 3 Design Kit (Community)](https://www.figma.com/design/cmkf7Rolvec1ryF4Gs3ukE/Material-3-Design-Kit--Community-?node-id=57998-42882&t=LoGawel0WqiNhgWS-0)
+## Objetivos da V1
 
+- Criar um componente visual simples e reutilizável
+- Utilizar Web Components com Shadow DOM
+- Manter o JavaScript enxuto e previsível
+- Permitir que o layout seja controlado externamente (ex: Playground)
 
 ---
+
 ## Tecnologias Utilizadas
 
-### Web Components
-
-* Custom Elements
-* Shadow DOM
-* Encapsulamento de estilo e estrutura
-
-### Lit
-
-* Renderização declarativa com `html`
-* Ciclo de vida simplificado
-* Código previsível e enxuto
-
-### CSS externo + adoptedStyleSheets
-
-* Estilos desacoplados da lógica
-* Organização orientada a Design System
-* Suporte a temas e tokens
+- **Web Components**
+  - Custom Elements
+  - Shadow DOM
+- **Lit**
+  - `LitElement`
+  - Templates com `html`
 
 ---
 
@@ -49,214 +34,144 @@ Material design kit: [Material 3 Design Kit (Community)](https://www.figma.com/d
 
 ```text
 components/
-├── button/
-│   ├── fab-button/
-│   │   ├── fab-button.css
-│   │   └── fab-button.js
-
+└── button/
+    └── fab-button/
+        ├── fab-button.js
+        └── fab-button.css
 
 docs/
-├── button/
-│   └── fab-button.md
+└── button/
+    └── fab-button.md
+
+playground/
+├── index.html
+└── playground.css
+````
+
+* `components/` contém o código do componente
+* `docs/` centraliza a documentação
+* `playground/` é usado apenas para visualização e testes manuais
+
+---
+
+## Implementação do Componente
+
+### `fab-button.js`
+
+Define o Custom Element `<fab-button>` e renderiza apenas o botão base.
+
+```js
+import { LitElement, html, css } from 'https://unpkg.com/lit@3?module';
+
+class FabButton extends LitElement {
+  static styles = css`
+    @import './fab-button.css';
+  `;
+
+  render() {
+    return html`
+      <button aria-label="Ação principal">
+        PF
+      </button>
+    `;
+  }
+}
+
+customElements.define('fab-button', FabButton);
 ```
 
-A documentação é mantida **centralizada na pasta `docs/`**, separada do código-fonte, permitindo a criação de um **site de documentação**, integração com ferramentas como Storybook ou Docusaurus e uma visão unificada do Design System.
-
 ---
 
-## Estrutura da Documentação
+### `fab-button.css`
 
-A documentação do componente segue uma organização centralizada, mantendo consistência entre todos os componentes do Design System.
-
-### Localização
-
-Os arquivos de documentação ficam em:
-
-```text
-docs/
-├── button/
-│   └── fab-button.md
-```
-
-Essa abordagem garante:
-
-* Visão centralizada de todos os componentes
-* Facilidade para geração de documentação automática
-* Separação clara entre código e documentação
-
-### Convenção de Nome
-
-```text
-fab-button.md
-fab-button.md
-```
-
-Cada arquivo representa uma **versão funcional do componente**, documentando mudanças de comportamento, estrutura ou API.
-
-### Estrutura do Arquivo `.md`
-
-Cada documentação deve conter, no mínimo:
-
-1. **Visão Geral**
-   Descrição e propósito da versão
-
-2. **Objetivos da Versão**
-   O que esta versão resolve
-
-3. **Tecnologias Utilizadas**
-   Stack e decisões técnicas
-
-4. **Estrutura de Pastas**
-   Organização entre `components/` e `docs/`
-
-5. **O que Inclui / Não Inclui**
-   Escopo claro da versão
-
-6. **Design Tokens**
-   Tokens disponíveis e uso
-
-7. **Uso Básico**
-   Exemplo mínimo de consumo
-
-8. **Estratégia de Evolução**
-   Próximos passos planejados
-
-Essa padronização garante consistência entre componentes e facilita a adoção do Design System.
-
----
-
-## Estrutura da Documentação
-
-A documentação do componente segue o mesmo princípio de simplicidade e evolução incremental adotado no código.
-
-### Localização
-
-A documentação fica **dentro da pasta do componente**, garantindo:
-
-* Proximidade entre código e documentação
-* Evolução sincronizada
-* Facilidade de descoberta
-
-### Convenção de Nome
-
-```text
-fab-button.md
-fab-button.md
-```
-
-Cada arquivo representa uma **versão funcional do componente**, não apenas mudanças cosméticas.
-
-### Estrutura do Arquivo `.md`
-
-Cada documentação deve conter, no mínimo:
-
-1. **Visão Geral**
-   Propósito da versão
-
-2. **Objetivos da Versão**
-   O que a versão resolve
-
-3. **Tecnologias Utilizadas**
-   Stack e decisões técnicas
-
-4. **Estrutura de Pastas**
-   Organização do componente
-
-5. **O que Inclui / Não Inclui**
-   Escopo claro da versão
-
-6. **Design Tokens**
-   Tokens disponíveis e uso
-
-7. **Uso Básico**
-   Exemplo mínimo de consumo
-
-8. **Estratégia de Evolução**
-   Próximos passos planejados
-
-Essa padronização garante consistência entre componentes e facilita a adoção do Design System.
-
----
-
-## O que a versão inicial Inclui
-
-### Estilo
-
-* FAB circular (56x56)
-* Cor primária via token
-* Sombra simples
-* Posicionamento fixo (canto inferior direito)
-
-### Estrutura
-
-* Elemento `<button>` interno
-* Ícone estático (`+`)
-* Shadow DOM ativo
-
----
-
-## O que a versão inicial NÃO Inclui (intencionalmente)
-
-* Eventos de clique
-* Estados (`hover`, `active`, `focus`)
-* Animações
-* Ripple effect
-* Slots
-* Variantes de cor
-* FAB menu ou subações
-
-Essas exclusões evitam acoplamento precoce e facilitam evolução controlada.
-
----
-
-## Design Tokens
-
-Tokens definidos no `:host`:
+Responsável apenas pela aparência visual do botão.
 
 ```css
---fab-bg
---fab-color
---fab-shadow
-```
+:host {
+  --fab-bg: #6751A1;
+  --fab-color: #FFFFFF;
+  --fab-shadow: 0 6px 16px rgba(0,0,0,.2);
 
-Permitem sobrescrita externa e integração com temas.
+  display: inline-block;
+}
+
+button {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+
+  background: var(--fab-bg);
+  color: var(--fab-color);
+  box-shadow: var(--fab-shadow);
+
+  display: grid;
+  place-items: center;
+
+  font-size: 18px;
+  cursor: pointer;
+}
+```
 
 ---
 
 ## Uso Básico
 
 ```html
-<script type="module" src="/components/buttons/fab-button/fab-button.js"></script>
-
 <fab-button></fab-button>
 ```
 
-Nenhuma configuração adicional é necessária na versão inicial.
+Nenhuma configuração adicional é necessária na V1.
 
 ---
 
-## Estratégia de Evolução
+## Integração com o Playground
 
-Evolução planejada de forma incremental:
+O posicionamento do componente **não é responsabilidade do FAB**, mas sim do container externo.
 
-* **V2 – Acessibilidade**
-  `:focus-visible`, navegação por teclado
+Exemplo usado no playground:
 
-* **V3 – Comportamento**
-  Evento de clique (`fab-click`)
+```css
+.stage {
+  display: grid;
+  place-items: center;
+}
+```
 
-* **V4 – Customização**
-  Slot para ícone, atributos (`variant`, `size`)
+Isso permite que o `<fab-button>` seja renderizado no centro da área de visualização.
 
-* **V5 – Interação**
-  Ripple effect, animações
+---
 
-* **V6 – Composição**
-  FAB Menu, subações, motion tokens
+## O que a V1 Inclui
+
+* Estrutura visual do FAB
+* Shadow DOM
+* Tokens de cor via CSS variables
+* Código simples e previsível
+
+---
+
+## O que a V1 NÃO Inclui (intencional)
+
+* Eventos de clique
+* Estados (`hover`, `active`, `focus`)
+* Animações
+* Slots
+* Variações de tamanho ou cor
+* Posicionamento fixo (`position: fixed`)
+
+---
+
+## Evoluções Futuras Planejadas
+
+* **V2**: Acessibilidade (teclado, `focus-visible`)
+* **V3**: Evento customizado de clique
+* **V4**: Slots e atributos
+* **V5**: Animações e feedback visual
+* **V6**: FAB Menu com ações secundárias
 
 ---
 
 ## Conclusão
 
-A primeira versão do `<fab-button>` não busca ser completa, mas sim **correta, simples e sustentável**. Ela estabelece uma base sólida para um componente robusto, alinhado a boas práticas de Web Components e Design Systems.
-
+A V1 do `<fab-button>` estabelece uma base sólida, simples e extensível para o Design System Cats, priorizando clareza, manutenção e evolução incremental.
