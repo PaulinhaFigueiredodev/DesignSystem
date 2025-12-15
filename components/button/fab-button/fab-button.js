@@ -2,9 +2,9 @@ import { LitElement, html, css }
   from 'https://unpkg.com/lit@3/index.js?module';
 
 /**
- * FAB Button — V1 (estável)
+ * FAB Button
  * ------------------------
- * - Visual apenas
+ * - Visual apenas - sera implementado comportamento posteriormente
  * - Sem ações
  * - Sem eventos
  * - Sem layout
