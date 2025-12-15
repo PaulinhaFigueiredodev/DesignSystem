@@ -1,4 +1,4 @@
-# Design System Cats — Guia Geral 🐱
+# Design System — Guia Geral 🐱
 
 Este documento explica **toda a estrutura do projeto**, **como criar componentes**, **como utilizá-los**, **como visualizá-los no playground** e **como rodar o projeto localmente**.  
 Ele foi escrito para que qualquer pessoa do time consiga **copiar, colar e rodar** sem conhecimento prévio do projeto.

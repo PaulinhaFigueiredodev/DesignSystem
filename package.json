@@ -1,7 +1,7 @@
 {
-    "name": "design-system-cats",
+    "name": "design-system",
     "version": "0.1.0",
-    "description": "Design System Cats — Web Components com Lit, testes e playground",
+    "description": "Design System — Web Components com Lit, testes e playground",
     "private": true,
     "type": "module",
   
@@ -30,8 +30,7 @@
       "design-system",
       "web-components",
       "lit",
-      "accessibility",
-      "cats"
+      "accessibility"
     ],
   
     "engines": {
