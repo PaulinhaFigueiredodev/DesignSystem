@@ -2,28 +2,27 @@ import { css } from "https://cdn.jsdelivr.net/gh/lit/dist@3/core/lit-core.min.js
 
 export const fabButtonStyles = css`
   button {
-    display: inline-block;
-    font-size: 24dp;
-    font-weight: bold;
     cursor: pointer;
     border: none;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-    background: #6751a1;
-    color: #ffffff;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-
-    width: 56px;
+    border-radius: 20px;
+    background: rgba(103, 80, 164, 1);
+    width: 104px;
     height: 56px;
-
-    display: grid;
-    place-items: center;
   }
+
   button:hover {
-    background: #563d87;
+    background: rgba(79, 55, 138, 1);
   }
 
   button:active {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    opacity: 0.8;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
   }
+  .label {
+    color: #D9D9D9;
+    font-size: 1.4rem;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
 `;
