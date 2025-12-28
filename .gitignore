@@ -1,2 +1,12 @@
-# Ignorar arquivos gerados pelo macOS
+# Ignorar arquivos
 .DS_Store
+.vscode/
+*storybook.log
+storybook-static
+node_modules/
+.env
+.package-lock.json
+.package.json
+.debug-storybook
+dist/
+stories/

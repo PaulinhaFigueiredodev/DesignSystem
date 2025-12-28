@@ -1,5 +1,5 @@
-import { LitElement, html } from "https://unpkg.com/lit@3/index.js?module";
-import { fabButtonStyles } from "./styles.js";
+import { LitElement, html } from "lit";
+import { fabButtonStyles } from './fab-button.styles';
 
 class FabButton extends LitElement {
   static styles = [fabButtonStyles];
@@ -17,3 +17,4 @@ class FabButton extends LitElement {
   }
 }
 customElements.define("fab-button", FabButton);
+  
