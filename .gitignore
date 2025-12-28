@@ -9,4 +9,5 @@ node_modules/
 .package.json
 .debug-storybook
 dist/
-stories/
+.cache/
+stories/assets/
