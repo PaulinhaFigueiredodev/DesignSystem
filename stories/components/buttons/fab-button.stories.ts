@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/web-components';
 
-import '../components/button/fab-button/fab-button';
+import '../../../components/button/fab-button/fab-button';
 
 const meta: Meta = {
   title: 'Components/Buttons/Fab Button',
