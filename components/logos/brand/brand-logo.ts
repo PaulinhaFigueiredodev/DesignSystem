@@ -1,6 +1,6 @@
 import { LitElement, html } from "lit";
 import { property } from "lit/decorators.js";
-import { brandLogoStyles } from "./brand-logo-styles.ts";
+import { brandLogoStyles } from "./brand-logo.styles.ts";
 
 export class BrandLogo extends LitElement {
   static styles = brandLogoStyles;
@@ -21,5 +21,4 @@ export class BrandLogo extends LitElement {
     `;
   }
 }
-
 customElements.define("brand-logo", BrandLogo);
