@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    /* Target moderno (necessário para decorators do Lit) */
+    "target": "ES2020",
+
+    /* Módulos ESM */
+    "module": "ESNext",
+
+    /* Resolução para Vite + ESM */
+    "moduleResolution": "bundler",
+
+    /* Libs necessárias para browser moderno */
+    "lib": ["DOM", "ES2020"],
+
+    /* Decorators (OBRIGATÓRIO para @property, @state, etc) */
+    "experimentalDecorators": true,
+
+    /* Essencial para Lit funcionar corretamente */
+    "useDefineForClassFields": false,
+
+    /* Qualidade de tipagem */
+    "strict": true,
+
+    /* Interop */
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+
+    /* Performance / DX */
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* Build */
+    "isolatedModules": true,
+    "noEmit": true,
+    "types": ["vite/client"]
+  },
+
+  "include": ["components/**/*", "stories/**/*", ".storybook/**/*"]
+}
